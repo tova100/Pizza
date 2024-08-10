@@ -1,0 +1,23 @@
+[
+    {
+        "IdUser": 1,
+        "userName": "sara",
+        "orders": [
+            {
+                "IdOrder": 2,
+                "date":"24.08.2022",
+                "adress":"yona",
+                "totalSum":20,
+                "pizzot": [
+                    {
+                        "size": "M",
+                        "tosafot": []
+                    },
+                    {
+                        "size": "M"
+                    }
+                ]
+            }
+        ]
+    }
+]
