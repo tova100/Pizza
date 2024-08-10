@@ -1,15 +1,18 @@
 
 # Pizza Ordering Website Project
+
 A website for ordering pizza with the following features:
 
-1.Order Page: Add, edit, and submit pizzas.
-2.Pizza Edit Page: Edit pizza details.
-3. Order Management Page: View and manage orders.
-4. Order Display Page: View order details and confirm.
-## Technologies: React with hooks, MUI (Material-UI) for design, local storage for data management.
+1. **Order Page**: Add, edit, and submit pizzas.
+2. **Pizza Edit Page**: Edit pizza details.
+3. **Order Management Page**: View and manage orders.
+4. **Order Display Page**: View order details and confirm.
 
+## Technologies
 
-
+- **React**: For building the user interface with functional components and hooks.
+- **MUI (Material-UI)**: For design and UI components.
+- **Local Storage**: For managing pizza and order data.
 
 
 
