@@ -1,3 +1,18 @@
+
+# Pizza Ordering Website Project
+A website for ordering pizza with the following features:
+
+### Order Page: Add, edit, and submit pizzas.
+### Pizza Edit Page: Edit pizza details.
+### Order Management Page: View and manage orders.
+### Order Display Page: View order details and confirm.
+### Technologies: React with hooks, MUI (Material-UI) for design, local storage for data management.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
