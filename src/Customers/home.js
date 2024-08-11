@@ -6,7 +6,7 @@ export function Home() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      height="100vh" // אם אתה רוצה שהטקסט יהיה במרכז התצוגה האנכית
+      height="100vh" 
     >
       <Typography variant="h1" component="h1" gutterBottom>
         ברוכים הבאים לבית הפיצה

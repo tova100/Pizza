@@ -15,30 +15,32 @@ import {
 } from "@mui/material";
 import { OrderForm } from "./orderForm";
 
+// This Component  display the current customer's orders
 export function DisplayMyOrder() {
+  // Get customer name from the navigation state
   const location = useLocation();
   const { customerName } = location.state || {};
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectdOrder] = useState(null);
   const [currentCustomer, setCurrentCustomer] = useState();
+  // Load orders from localStorage when the component mounts
   useEffect(() => {
     const storedOrders =
       JSON.parse(localStorage.getItem("customer-orders")) || [];
-
+    // Find the customer with the given name
     const customer = storedOrders.find(
       (customer) => customer.customerName === customerName
     );
-    console.log(customer, storedOrders, customerName);
     setCurrentCustomer(customer);
     setOrders(customer.orders);
   }, [customerName]);
-
+  // Function that set the status of order  and update localStorage
   const saveOrder = (index) => {
     const updatedOrders = [...orders];
     updatedOrders[index].status = true;
     setOrders(updatedOrders);
     const storage = JSON.parse(localStorage.getItem("customer-orders")) || [];
-
+    // Update the storage with the modified order list
     const updatedStorage = storage.map((customer) => {
       if (customer.customerName === currentCustomer.customerName) {
         return { ...customer, orders: updatedOrders };
@@ -49,7 +51,7 @@ export function DisplayMyOrder() {
     localStorage.setItem("customer-orders", JSON.stringify(updatedStorage));
   };
 
- 
+
 
   return (
     <div>

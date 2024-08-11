@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import { Button, TextField, Box, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
-
+// This component  handle the form for creating or editing an order
 export function OrderForm({ order }) {
+  // State to manage form details, initializing with either the provided order or default values
   const [formOrderDetails, setformOrderDetails] = useState(
     order
       ? order
       : {
-          date: "",
-          address: "",
-          phoneNumber: "",
-          totalSum: "",
-          pizzas: [],
-          status: false,
-        }
+        date: "",
+        address: "",
+        phoneNumber: "",
+        totalSum: "",
+        pizzas: [],
+        status: false,
+      }
   );
-
+  // Get the customerName from the location state
   const navigat = useNavigate();
-  const location = useLocation();
-
-  const { customerName } = location.state || {};
-
+  const state = useLocation();
+  const { customerName } = state || {};
+  // Function to handle input changes and update the form state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setformOrderDetails({
@@ -28,7 +28,7 @@ export function OrderForm({ order }) {
       [name]: value,
     });
   };
-
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -39,6 +39,7 @@ export function OrderForm({ order }) {
       (customer) => customer.customerName === customerName
     );
     let idOrder = 1;
+    // If editing an existing order, find its index and update it
     if (order) {
       idOrder = order.idOrder;
       const findIndex = currentCustomer.orders.findIndex(
@@ -46,6 +47,7 @@ export function OrderForm({ order }) {
       );
       currentCustomer.orders[findIndex] = formOrderDetails;
     } else {
+      // If creating a new order, assign a new idOrder and add it to the customer's orders
       if (currentCustomer.orders.length > 0) {
         idOrder =
           currentCustomer.orders[currentCustomer.orders.length - 1].idOrder + 1;
@@ -54,12 +56,11 @@ export function OrderForm({ order }) {
         ...formOrderDetails,
         idOrder,
       };
-
       currentCustomer.orders.push(newOrder);
     }
-
+    // Update the customer-orders in localStorage
     localStorage.setItem("customer-orders", JSON.stringify(customerOrders));
-
+    // Navigate to the pizza form with the customerName and idOrder
     navigat("/pizza-form", { state: { customerName: customerName, idOrder } });
   };
 

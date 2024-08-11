@@ -19,19 +19,22 @@ import { Button } from "@mui/material";
 function Row({ row, customerName }) {
   const [open, setOpen] = useState(false);
   const navigat = useNavigate();
+    // Translation mapping for pizza toppings
   const toppingsTranslation = {
     mushrooms: "פטריות",
     tomatoes: "עגבניות",
     blackOlives: "זיתים שחורים",
     greenOlives: "זיתים ירוקים",
   };
+  // Get details of selected toppings, translating them to Hebrew
   const getToppingsDetails = (toppings) => {
     const selectedToppings = Object.keys(toppings)
       .filter((topping) => toppings[topping])
-      .map((topping) => toppingsTranslation[topping] || topping) // Translate to Hebrew
+      .map((topping) => toppingsTranslation[topping] || topping) 
       .join(", ");
     return selectedToppings.length > 0 ? selectedToppings : "אין תוספות";
   };
+    // Handle removing a row (order) from localStorage and navigate to the order management page
   const handleRemoveRow = (index) => {
     const storedOrders =
       JSON.parse(localStorage.getItem("customer-orders")) || [];
@@ -81,7 +84,7 @@ function Row({ row, customerName }) {
               <Typography variant="h6" gutterBottom component="div">
                 פרטי הפיצות
               </Typography>
-              <Table size="small" aria-label="purchases"className="table-container">
+              <Table size="small" aria-label="purchases" className="table-container">
                 <TableHead>
                   <TableRow>
                     <TableCell>כמות הפיצות</TableCell>
@@ -116,13 +119,13 @@ function Row({ row, customerName }) {
     </React.Fragment>
   );
 }
-
+// DisplayOrder component displays a table of orders with the ability to expand rows for more details
 export default function DisplayOrder() {
   const location = useLocation();
   const { order, customerName } = location.state || {};
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="collapsible table"className="table-container">
+      <Table aria-label="collapsible table" className="table-container">
         <TableHead>
           <TableRow>
             <TableCell />

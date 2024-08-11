@@ -11,16 +11,17 @@ import {
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "../App.css";
+// OrderManagement component displays a table of customer orders with navigation to detailed view
 export function OrderManagement() {
   const navigate = useNavigate();
-  const [customers, setCusstomers] = useState([]);
+  const [customers, setCustomers] = useState([]);
   useEffect(() => {
     let storedOrders = [];
     storedOrders = JSON.parse(localStorage.getItem("customer-orders")) || [];
-    setCusstomers(storedOrders);
+    setCustomers(storedOrders);
   }, []);
 
-  // navigate to display this order page
+  // Navigate to the display-order page with the selected order and customer details
   const handleRowClick = (order, customerName) => {
     navigate("/display-order", { state: { order, customerName } });
   };
@@ -50,14 +51,11 @@ export function OrderManagement() {
           {customers.length ? (
             customers.map((customer, customerIndex) => (
               <React.Fragment key={customerIndex}>
-                {/* שורה עם שם הלקוח */}
                 <TableRow>
                   <TableCell>{customer.customerName}</TableCell>
                   <TableCell colSpan={3}></TableCell>{" "}
-                  {/* עמודות ריקות לשמור על מבנה הטבלה */}
                 </TableRow>
 
-                {/* שורות עבור כל הזמנה של הלקוח */}
                 {customer.orders.length ? (
                   customer.orders.map((order, orderIndex) => (
                     <TableRow
@@ -68,13 +66,12 @@ export function OrderManagement() {
                       style={{ cursor: "pointer" }}
                     >
                       <TableCell></TableCell>{" "}
-                      {/* תא ריק כדי ליישר את ההזמנות */}
                       <TableCell>{order.phoneNumber}</TableCell>
                       <TableCell>{order.date}</TableCell>
                       <TableCell>
                         {order.pizzas.reduce(
                           (acc, pizza) => acc + Number(pizza.quantity),
-                          0
+                          1
                         )}
                       </TableCell>
                     </TableRow>

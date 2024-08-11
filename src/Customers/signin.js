@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Button, TextField, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router";
-
+// Signin component allows users to sign in by providing their name(check that name) and phone number.
 export function Signin() {
   const [formDetailsCustomer, setformDetailsCustomer] = useState({
     customerName: "",
     phoneNumber: "",
   });
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -17,23 +16,25 @@ export function Signin() {
       [name]: value,
     });
   };
-
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Get all customer data from local storage
     const allCustomers =
       JSON.parse(localStorage.getItem("customer-orders")) || [];
-
     const exists = allCustomers.some(
       (customer) => customer.customerName === formDetailsCustomer.customerName
     );
-   
+    // Check if the customer already exists
     if (exists) {
+      // Navigate to the customer-order page if the customer exists
       navigate("/customer-order", {
         state: {
           customerName: formDetailsCustomer.customerName,
         },
       });
     } else {
+      // Show an alert if the customer does not exist
       alert("this customer is not exists");
     }
   };

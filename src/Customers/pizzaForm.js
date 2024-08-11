@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -8,15 +8,16 @@ import {
   TextField,
 } from "@mui/material";
 
+// This component  handle the form of pizza and edit 
 export function PizzaForm({ pizza, onSave, cancel }) {
   const [data, setData] = useState(pizza);
-
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     onSave(data);
   };
-
+// the topping of pizza update the data
   const handleToppingChange = (e) => {
     setData({
       ...data,
@@ -31,7 +32,7 @@ export function PizzaForm({ pizza, onSave, cancel }) {
         dir="rtl"
         onSubmit={handleSubmit}
         style={{
-          border: "1px solid #ddd", // light gray border
+          border: "1px solid #ddd",
           padding: "20px",
           maxWidth: "500px",
           margin: "auto",
@@ -115,37 +116,6 @@ export function PizzaForm({ pizza, onSave, cancel }) {
               fullWidth
             />
           </Box>
-          {/* {initialValues&&
-          <>
-          <TextField
-          label="כתובת"
-          name="address"
-          value={address}
-          onChange={handleAdrressChange}
-          fullWidth
-          margin="normal"
-          required
-        />
-        <TextField
-          label="מספר טלפון"
-          name="phoneNumber"
-          value={phoneNumber}
-          onChange={handlePhoneChange}
-          fullWidth
-          margin="normal"
-          required
-        />
-        <TextField
-        label="תאריך"
-        name="date"
-        type="date"
-        value={date}
-        onChange={handleDateChange}
-        fullWidth
-        margin="normal"
-        required
-      />
-      </>} */}
           <Box
             style={{
               display: "flex",
