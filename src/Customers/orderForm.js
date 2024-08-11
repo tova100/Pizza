@@ -18,8 +18,8 @@ export function OrderForm({ order }) {
   );
   // Get the customerName from the location state
   const navigat = useNavigate();
-  const state = useLocation();
-  const { customerName } = state || {};
+  const location = useLocation();
+  const { customerName } = location.state || {};
   // Function to handle input changes and update the form state
   const handleChange = (e) => {
     const { name, value } = e.target;

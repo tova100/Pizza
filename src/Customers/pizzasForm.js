@@ -4,10 +4,10 @@ import { Box, Button } from "@mui/material";
 import { PizzaForm } from "./pizzaForm";
 
 export function PizzasForm() {
-  const state = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
   // Destructure customerName and idOrder from state
-  const { customerName, idOrder } = state || {};
+  const { customerName, idOrder } = location.state || {};
   // State for selected pizza, index of pizza, and array of pizzas
   const [selctedPizza, setSelectedPizza] = useState(null);
   const [indexPizza, setIndexPizza] = useState(null);
