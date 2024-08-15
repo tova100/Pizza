@@ -15,27 +15,48 @@ A website for ordering pizza with the following features:
 - **Local Storage**: For managing pizza and order data.
 # pages of website
 **home page**
+
 ![image](https://github.com/user-attachments/assets/5dfa28d4-52e6-48a7-99e0-20f044355608)
+
 **press on new customer**
+
 ![image](https://github.com/user-attachments/assets/da5b08d2-5d66-4943-98ba-dc85eebadf29)
+
 **press on exsit customer**
+
 ![image](https://github.com/user-attachments/assets/99812574-ec4a-4ec9-a09b-fdb4487cf416)
+
 **page of customer**
+
 ![image](https://github.com/user-attachments/assets/14048baa-dc06-46d2-8082-ef5523b3e93b)
+
 **press on new order**
+
 ![image](https://github.com/user-attachments/assets/ca0fd933-7a73-444c-bbb6-a774da1985ca)
+
 When i press on yes button 
+
 ![image](https://github.com/user-attachments/assets/45b0e8cc-e89c-460f-8454-35f7c5fc9d7d)
+
 I have an option to edit the details order
+
 ![image](https://github.com/user-attachments/assets/bc47161a-3171-4157-9c33-0c77f9f73dc4)
+
 **press on my order and there is option to edit the order**
+
 ![image](https://github.com/user-attachments/assets/4a578da0-b616-4d99-86e6-8e792122ead6)
+
 After i press on send order
+
 ![image](https://github.com/user-attachments/assets/df12206f-e8ba-4e24-9aac-16db55fe6469)
+
 **press on Admin**
 This page display all oeders
+
 ![image](https://github.com/user-attachments/assets/477c862e-608a-4fde-b734-6855c67ad9a9)
+
 When I press on order from this list i get the details of specific order and there is confirm button:
+
 ![image](https://github.com/user-attachments/assets/58907d63-ccde-4eb7-8730-d0cfb4b808ca)
 
 
