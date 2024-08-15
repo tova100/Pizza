@@ -33,6 +33,9 @@ A website for ordering pizza with the following features:
 **press on new order**
 
 ![image](https://github.com/user-attachments/assets/ca0fd933-7a73-444c-bbb6-a774da1985ca)
+After press add pizza button
+
+![image](https://github.com/user-attachments/assets/2fd33319-4d6e-4035-973a-c91f27c73f89)
 
 When i press on yes button 
 
